@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Cartas Aleatorias</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -12,18 +12,36 @@
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
+
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="container" id="container">
+      <div>
+        <div class="col-auto">
+          <label for="inputPassword6" class="col-form-label">Cartas:</label>
+        </div>
+        <div class="col-auto">
+          <input
+            type="number"
+            id="cantidad"
+            class="form-control"
+            aria-describedby="passwordHelpInline"
+          />
+        </div>
       </div>
+      <div>
+        <div class="botonCarta d-grid gap-2 col-4 mx-auto" id="boton">
+          <button type="button" class="btn btn-outline-dark">Cartas</button>
+        </div>
+        <div class="botonCarta d-grid gap-2 col-4 mx-auto" id="ordenar">
+          <button type="button" class="btn btn-outline-dark">Ordenadas</button>
+        </div>
+      </div>
+
+      <div
+        class="nuevasCartas d-flex justify-content-center"
+        id="nuevasCartas"
+        margin="10px"
+      ></div>
     </div>
   </body>
 </html>

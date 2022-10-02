@@ -1,1 +1,27 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background: azure;
+  /* margin-top: 5px; */
+}
+
+#nuevasCartas {
+  margin-top: 5px;
+}
+
+/* #numerocard {
+  font-size: 200px;
+}
+
+
+#palo-izq {
+  font-size: 75px;
+}
+
+#palo-der {
+  font-size: 75px;
+}
+
+#boton {
+  margin-bottom: 5px;
+} */
