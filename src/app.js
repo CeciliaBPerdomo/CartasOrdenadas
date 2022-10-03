@@ -19,40 +19,23 @@ window.onload = function() {
   function dibujarCartas(array) {
     document.getElementById("nuevasCartas").innerHTML = "";
     for (let i = 0; i < array.length; i++) {
-      let numero = array[i].slice(0, 1);
-      let palo = array[i].slice(1);
+      // Chequea que el palo para pintar la carta de roja
+      let color = array[i][1] == "♥" || array[i][1] == "♦" ? "color:red" : "";
 
-      if (palo == "♥" || palo == "♦") {
-        document.getElementById("nuevasCartas").innerHTML += `
+      document.getElementById("nuevasCartas").innerHTML += `
         <div class="d-inline-block" id="cartaTamano">
-          <div class="card fs-1 " id="carta" name="carta" style="width:9rem; height: 15rem; color:red">       
+          <div class="card fs-1 " id="carta" name="carta" style="width:9rem; height: 15rem; ${color}">       
             <div class="card-body">
-                <p class="paloIzq card-text text-start" id="palo-izq">${palo}</p>
+                <p class="paloIzq card-text text-start" id="palo-izq">${array[i][1]}</p>
             </div> 
             <div>
-                <p class="numeroBar card-text text-center" id="numerocard">${numero}</p>
+                <p class="numeroBar card-text text-center" id="numerocard">${array[i][0]}</p>
             </div>
             <div class=" card-body">
-                <p class="paloDer card-text text-end" id="palo-der">${palo}</p>
+                <p class="paloDer card-text text-end" id="palo-der">${array[i][1]}</p>
             </div>
           </div>
         </div>`;
-      } else {
-        document.getElementById("nuevasCartas").innerHTML += `
-        <div class="d-inline-block" id="cartaTamano">
-          <div class="card fs-1 " id="carta" name="carta" style="width:9rem; height: 15rem;">       
-            <div class="card-body">
-                <p class="paloIzq card-text text-start" id="palo-izq">${palo}</p>
-            </div> 
-            <div>
-                <p class="numeroBar card-text text-center" id="numerocard">${numero}</p>
-            </div>
-            <div class=" card-body">
-                <p class="paloDer card-text text-end" id="palo-der">${palo}</p>
-            </div>
-          </div>
-        </div>`;
-      }
     }
   }
 
@@ -83,6 +66,8 @@ window.onload = function() {
         let temp = arrCartas[index].slice(0, 1);
         let temp1 = arrCartas[index + 1].slice(0, 1);
 
+        //let temp1 = arrCartas[index + 1][1];
+
         if (temp == "A") {
           temp = 1;
         } else if (temp == "J") {
@@ -112,7 +97,6 @@ window.onload = function() {
       }
       wall--;
     }
-    console.log("Array Cartas: " + arrCartas);
 
     dibujarCartas(arrCartas);
     return arrCartas;
